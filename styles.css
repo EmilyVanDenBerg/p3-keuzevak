@@ -58,9 +58,8 @@ main {
     height: 40vh;
     width: 40vw;
     text-align: center;
-    border-radius: 20px; /* Toegevoegd voor ronde uitlijning */
+    border-radius: 20px;
 }
-
 
 footer {
     grid-area: footer;
@@ -68,6 +67,7 @@ footer {
     padding: 10px 0;
     text-align: center;
     overflow: hidden;
+    color: #ffffff;
 }
 
 @font-face {
