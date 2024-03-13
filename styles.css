@@ -1,0 +1,76 @@
+body {
+    font-family: "Inter";
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    overflow: hidden;
+}
+
+header {
+    grid-area: header;
+    background-color: #9C84FF;
+    padding: 10px 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    margin-right: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.centerblock {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+    background-color: #8D7CD3;
+    color: #ffffff;
+    height: 40vh;
+    width: 40vw;
+    text-align: center;
+    border-radius: 20px; /* Toegevoegd voor ronde uitlijning */
+}
+
+
+footer {
+    grid-area: footer;
+    background-color: #705FB4;
+    padding: 10px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("Inter/Inter-VariableFont_slnt,wght.ttf");
+}
