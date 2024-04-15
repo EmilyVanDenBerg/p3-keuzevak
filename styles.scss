@@ -1,0 +1,101 @@
+// Variabelen
+$font-family: "Inter", sans-serif;
+$primary-color: #8D7CD3;
+$secondary-color: #705FB4;
+$spacing: 20px;
+$block-height: 30vh;
+
+// Stijlen voor body
+body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    overflow: hidden;
+}
+
+// Stijlen voor header
+header {
+    grid-area: header;
+    background-color: $primary-color;
+    padding: 10px 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // Geneste elementen
+    .header-left {
+        margin-right: auto;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        // Geneste elementen
+        li {
+            display: inline;
+
+            // &-selector gebruiken
+            a {
+                text-decoration: none;
+                margin: 0 $spacing;
+            }
+        }
+    }
+}
+
+// Stijlen voor main
+main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    // Geneste elementen
+    .centerblock {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+        align-items: center; 
+        background-color: $primary-color;
+        color: #ffffff;
+        height: 40vh;
+        width: 40vw;
+        text-align: center;
+        border-radius: 20px;
+    }
+
+    // Geneste elementen
+    .block {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+        align-items: center; 
+        background-color: $primary-color;
+        color: #ffffff;
+        height: $block-height;
+        width: 20vw;
+        text-align: center;
+        border-radius: 20px;
+        margin: $spacing;
+    }
+}
+
+// Stijlen voor footer
+footer {
+    grid-area: footer;
+    background-color: $secondary-color;
+    padding: 10px 0;
+    text-align: center;
+    overflow: hidden;
+    color: #ffffff;
+}

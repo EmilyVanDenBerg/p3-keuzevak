@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keuzevak: Portfolio website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <span class="header-left">
+            <p>Portfolio: Emily van den Berg</p>
+        </span>
+        <nav class="header-right">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="overmij.html">Over Mij</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="contact-container">
+        <article class="block contact-left">
+            <!-- Formulier hier -->
+            <h2>Contactformulier</h2>
+            <form action="#" method="post">
+                <label for="name">Naam:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Bericht:</label>
+                <textarea id="message" name="message" required></textarea><br>
+                <input type="submit" value="Verzenden">
+            </form>
+        </article>
+        <article class="block contact-right">
+            <h2>Mijn overige contactvormen</h2>
+            <p>Email: 9023166@student.zadkine.nl OF evdberg05@outlook.com</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Emily van den Berg. Alle rechten voorbehouden.</p>
+    </footer>
+</body>
+</html>
