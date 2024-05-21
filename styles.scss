@@ -1,101 +1,181 @@
-// Variabelen
+/* Variabelen */
 $font-family: "Inter", sans-serif;
-$primary-color: #8D7CD3;
-$secondary-color: #705FB4;
-$spacing: 20px;
-$block-height: 30vh;
+$color-primary: #8D7CD3;
+$color-secondary: #705FB4;
+$border-radius: 20px;
+$font-color: #ffffff;
 
-// Stijlen voor body
+/* Namespace */
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
-    font-family: $font-family;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-rows: 10vh 80vh 10vh;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-        "header"
-        "main"
-        "footer";
-    overflow: hidden;
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: 10vh 80vh 10vh;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "main" "footer";
+  overflow: hidden;
 }
 
-// Stijlen voor header
 header {
-    grid-area: header;
-    background-color: $primary-color;
-    padding: 10px 20px; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  grid-area: header;
+  background-color: $color-primary;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    // Geneste elementen
-    .header-left {
-        margin-right: auto;
-    }
+  .header-left {
+    margin-right: auto;
+  }
 
-    nav ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
+  nav {
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
 
-        // Geneste elementen
-        li {
-            display: inline;
+      li {
+        display: inline;
 
-            // &-selector gebruiken
-            a {
-                text-decoration: none;
-                margin: 0 $spacing;
-            }
+        a {
+          text-decoration: none;
+          margin: 0 20px;
         }
+      }
     }
+  }
 }
 
-// Stijlen voor main
 main {
-    grid-area: main;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+  grid-area: main;
+  @extend %flex-center;
+  overflow: hidden;
 
-    // Geneste elementen
-    .centerblock {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start; 
-        align-items: center; 
-        background-color: $primary-color;
-        color: #ffffff;
-        height: 40vh;
-        width: 40vw;
-        text-align: center;
-        border-radius: 20px;
-    }
+  .centerblock, .block {
+    @extend %flex-center;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: $color-primary;
+    color: $font-color;
+    text-align: center;
+    border-radius: $border-radius;
+  }
 
-    // Geneste elementen
-    .block {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start; 
-        align-items: center; 
-        background-color: $primary-color;
-        color: #ffffff;
-        height: $block-height;
-        width: 20vw;
-        text-align: center;
-        border-radius: 20px;
-        margin: $spacing;
-    }
+  .centerblock {
+    height: 40vh;
+    width: 40vw;
+  }
+
+  .block {
+    height: 30vh;
+    width: 20vw;
+    margin: 20px;
+  }
 }
 
-// Stijlen voor footer
 footer {
-    grid-area: footer;
-    background-color: $secondary-color;
-    padding: 10px 0;
-    text-align: center;
-    overflow: hidden;
-    color: #ffffff;
+  grid-area: footer;
+  background-color: $color-secondary;
+  padding: 10px 0;
+  text-align: center;
+  overflow: hidden;
+  color: $font-color;
+}
+
+/* Mediaqueries voor specifieke resoluties */
+
+/* 800x600 */
+@media only screen and (max-width: 800px) and (max-height: 600px) {
+  body {
+    grid-template-rows: 20vh 60vh 20vh;
+  }
+
+  header {
+    padding: 5px;
+
+    nav {
+      ul {
+        li {
+          a {
+            margin: 0 5px;
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    .centerblock, .block {
+      width: 90vw;
+      font-size: 14px; /* Aangepaste tekstgrootte */
+    }
+  }
+}
+
+/* 1920x1080 */
+@media only screen and (min-width: 1920px) and (min-height: 1080px) {
+  body {
+    grid-template-rows: 10vh 80vh 10vh;
+  }
+
+  header {
+    padding: 10px 20px;
+
+    nav {
+      ul {
+        li {
+          a {
+            margin: 0 20px;
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    .centerblock {
+      height: 40vh;
+      width: 40vw;
+    }
+
+    .block {
+      height: 30vh;
+      width: 20vw;
+      margin: 20px;
+    }
+  }
+}
+
+/* 1024x768 */
+@media only screen and (min-width: 1024px) and (min-height: 768px) {
+  body {
+    grid-template-rows: 15vh 70vh 15vh;
+  }
+
+  header {
+    padding: 10px;
+
+    nav {
+      ul {
+        li {
+          a {
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    .centerblock, .block {
+      width: 80vw;
+    }
+  }
 }
