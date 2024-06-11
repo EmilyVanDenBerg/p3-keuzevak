@@ -10,20 +10,18 @@ body {
   font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-rows: 10vh 80vh 10vh;
-  grid-template-columns: 1fr;
-  grid-template-areas: "header" "main" "footer";
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
-  grid-area: header;
   background-color: #8D7CD3;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: 0;
 }
 header .header-left {
   margin-right: auto;
@@ -39,11 +37,14 @@ header nav ul li {
 header nav ul li a {
   text-decoration: none;
   margin: 0 20px;
+  color: #ffffff;
 }
 
 main {
-  grid-area: main;
-  overflow: hidden;
+  flex-grow: 1;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
 }
 main .centerblock, main .block {
   flex-direction: column;
@@ -52,76 +53,53 @@ main .centerblock, main .block {
   color: #ffffff;
   text-align: center;
   border-radius: 20px;
+  padding: 20px;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
 }
 main .centerblock {
-  height: 40vh;
-  width: 40vw;
+  height: auto;
 }
 main .block {
-  height: 30vh;
-  width: 20vw;
-  margin: 20px;
+  height: auto;
 }
 
 footer {
-  grid-area: footer;
   background-color: #705FB4;
   padding: 10px 0;
   text-align: center;
-  overflow: hidden;
   color: #ffffff;
+  flex-shrink: 0;
 }
 
-/* Mediaqueries voor specifieke resoluties */
-/* 800x600 */
-@media only screen and (max-width: 800px) and (max-height: 600px) {
-  body {
-    grid-template-rows: 20vh 60vh 20vh;
-  }
+/* Media queries voor responsiviteit */
+@media (max-width: 800px) {
   header {
-    padding: 5px;
+    flex-direction: column;
+    align-items: flex-start;
   }
   header nav ul li a {
-    margin: 0 5px;
+    margin: 5px 0;
   }
-  main .centerblock, main .block {
-    width: 90vw;
-    font-size: 14px; /* Aangepaste tekstgrootte */
-  }
-}
-/* 1920x1080 */
-@media only screen and (min-width: 1920px) and (min-height: 1080px) {
-  body {
-    grid-template-rows: 10vh 80vh 10vh;
-  }
-  header {
-    padding: 10px 20px;
-  }
-  header nav ul li a {
-    margin: 0 20px;
-  }
-  main .centerblock {
-    height: 40vh;
-    width: 40vw;
-  }
-  main .block {
-    height: 30vh;
-    width: 20vw;
-    margin: 20px;
-  }
-}
-/* 1024x768 */
-@media only screen and (min-width: 1024px) and (min-height: 768px) {
-  body {
-    grid-template-rows: 15vh 70vh 15vh;
-  }
-  header {
+  main {
     padding: 10px;
   }
-  header nav ul li a {
-    margin: 0 10px;
-  }
   main .centerblock, main .block {
-    width: 80vw;
+    font-size: 14px;
+    padding: 10px;
+    margin: 10px 0;
+  }
+}
+@media (min-width: 1920px) {
+  main .centerblock, main .block {
+    max-width: 800px;
+    font-size: 18px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1919px) {
+  main .centerblock, main .block {
+    max-width: 700px;
   }
 }/*# sourceMappingURL=styles.css.map */
